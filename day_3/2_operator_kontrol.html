@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 3 - 2. Operator & Aturan Bisnis</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; line-height: 1.6; background: #f9fafb; color: #1f2937; }
+    .card { background: white; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb; max-width: 700px; margin: 0 auto 20px; }
+    pre { background: #1f2937; color: #f3f4f6; padding: 14px; border-radius: 6px; overflow-x: auto; }
+    .input-group { margin-bottom: 12px; }
+    label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 0.9rem; }
+    input, select { width: 100%; padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; }
+    .hasil-box { background: #fef3c7; border: 1px solid #f59e0b; padding: 12px; border-radius: 6px; margin-top: 14px; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hari 3 · Latihan 2: Operator &amp; Struktur Kontrol</h1>
+    <p>Mencoba fungsi logika aturan bisnis (diskon bertingkat &amp; biaya pembayaran).</p>
+
+    <div class="input-group">
+      <label for="belanja">Total Belanja (Rp):</label>
+      <input type="number" id="belanja" value="120000">
+    </div>
+
+    <div class="input-group">
+      <label for="metode">Metode Bayar:</label>
+      <select id="metode">
+        <option value="tunai">Tunai (Rp0)</option>
+        <option value="qris">QRIS (0,7%)</option>
+        <option value="transfer">Transfer (Rp2.500)</option>
+      </select>
+    </div>
+
+    <div id="hasil" class="hasil-box">Menghitung...</div>
+  </div>
+
+  <div class="card">
+    <h3>Tabel Pengujian Aturan Bisnis:</h3>
+    <table border="1" cellpadding="8" style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr style="background: #f3f4f6;"><th>Belanja</th><th>Diskon</th><th>Keterangan</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Rp120.000</td><td>Rp12.000 (10%)</td><td>&ge; Rp100.000</td></tr>
+        <tr><td>Rp50.000</td><td>Rp2.500 (5%)</td><td>Tepat di batas Rp50.000</td></tr>
+        <tr><td>Rp30.000</td><td>Rp0 (0%)</td><td>Di bawah Rp50.000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="2_operator_kontrol.js"></script>
+  <script>
+    const elBelanja = document.getElementById("belanja");
+    const elMetode = document.getElementById("metode");
+    const elHasil = document.getElementById("hasil");
+
+    function update() {
+      const b = Number(elBelanja.value) || 0;
+      const m = elMetode.value;
+      const d = hitungDiskon(b);
+      const fee = hitungBiaya(m, b - d);
+      const total = b - d + fee;
+
+      elHasil.innerHTML = `
+        Subtotal: ${formatRupiah(b)}<br>
+        Diskon: -${formatRupiah(d)}<br>
+        Biaya (${m}): ${formatRupiah(fee)}<br>
+        <strong>Total Bayar: ${formatRupiah(total)}</strong>
+      `;
+    }
+
+    elBelanja.addEventListener("input", update);
+    elMetode.addEventListener("change", update);
+    update();
+  </script>
+</body>
+</html>

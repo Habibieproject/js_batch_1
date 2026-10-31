@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KasirKu — Tambah Produk</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">KasirKu</a>
+    <nav class="nav">
+      <a href="index.html">Produk</a>
+      <a href="form.html" class="aktif">Tambah</a>
+      <a href="proses.html">Transaksi</a>
+    </nav>
+  </header>
+
+  <main class="kontainer">
+    <h1>Tambah Produk</h1>
+
+    <form id="form-produk" class="kartu form" novalidate>
+      <div class="baris-form">
+        <label for="nama" class="label">Nama produk</label>
+        <input type="text" id="nama" class="input" placeholder="mis. Teh Celup" maxlength="50">
+      </div>
+      <div class="baris-form">
+        <label for="kategori" class="label">Kategori</label>
+        <select id="kategori" class="input">
+          <option value="Minuman">Minuman</option>
+          <option value="Sembako">Sembako</option>
+          <option value="Kebersihan">Kebersihan</option>
+        </select>
+      </div>
+      <div class="dua-kolom">
+        <div class="baris-form">
+          <label for="harga" class="label">Harga (Rp)</label>
+          <input type="number" id="harga" class="input" placeholder="mis. 2000" min="1">
+        </div>
+        <div class="baris-form">
+          <label for="stok" class="label">Stok</label>
+          <input type="number" id="stok" class="input" placeholder="mis. 15" min="0">
+        </div>
+      </div>
+      <p id="pesan" class="pesan" role="status"></p>
+      <button type="submit" class="tombol tombol-utama">Simpan</button>
+    </form>
+
+    <h2>Produk yang baru ditambahkan</h2>
+    <div class="kartu">
+      <table class="tabel" id="tabel">
+        <thead><tr><th>Nama</th><th>Kategori</th><th>Harga</th><th>Stok</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">© 2026 KasirKu · Proyek Pelatihan Node.js &amp; React</footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KasirKu — Transaksi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">KasirKu</a>
+    <nav class="nav">
+      <a href="index.html">Produk</a>
+      <a href="form.html">Tambah</a>
+      <a href="proses.html" class="aktif">Transaksi</a>
+    </nav>
+  </header>
+
+  <main class="kontainer">
+    <h1>Transaksi Kasir</h1>
+
+    <div class="tata-transaksi">
+      <form id="form-keranjang" class="kartu form" novalidate>
+        <div class="baris-form">
+          <label for="produk" class="label">Produk</label>
+          <select id="produk" class="input">
+            <option value="Kopi Sachet|2500">Kopi Sachet — Rp2.500</option>
+            <option value="Teh Celup|2000">Teh Celup — Rp2.000</option>
+            <option value="Gula 1kg|16000">Gula 1kg — Rp16.000</option>
+            <option value="Beras 5kg|75000">Beras 5kg — Rp75.000</option>
+            <option value="Sabun Mandi|4000">Sabun Mandi — Rp4.000</option>
+          </select>
+        </div>
+        <div class="baris-form">
+          <label for="jumlah" class="label">Jumlah</label>
+          <input type="number" id="jumlah" class="input" value="1" min="1">
+        </div>
+        <p id="pesan-keranjang" class="pesan" role="status"></p>
+        <button type="submit" class="tombol tombol-utama">Tambah ke keranjang</button>
+      </form>
+
+      <section class="kartu">
+        <h2>Keranjang</h2>
+        <table class="tabel">
+          <thead><tr><th>Produk</th><th>Jml</th><th>Subtotal</th></tr></thead>
+          <tbody id="isi-keranjang"></tbody>
+        </table>
+
+        <div class="baris-form">
+          <label for="metode" class="label">Metode bayar</label>
+          <select id="metode" class="input">
+            <option value="tunai">Tunai</option>
+            <option value="qris">QRIS (0,7%)</option>
+            <option value="transfer">Transfer (Rp2.500)</option>
+          </select>
+        </div>
+
+        <dl class="ringkasan">
+          <dt>Subtotal</dt><dd id="subtotal">Rp0</dd>
+          <dt>Diskon</dt><dd id="diskon">Rp0</dd>
+          <dt>Biaya</dt><dd id="biaya">Rp0</dd>
+          <dt class="total">Total bayar</dt><dd id="total" class="total">Rp0</dd>
+        </dl>
+        <button type="button" id="tombol-selesai" class="tombol">Selesai</button>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">© 2026 KasirKu · Proyek Pelatihan Node.js &amp; React</footer>
+</body>
+</html>

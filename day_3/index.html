@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KasirKu — Daftar Produk</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">KasirKu</a>
+    <nav class="nav">
+      <a href="index.html" class="aktif">Produk</a>
+      <a href="form.html">Tambah</a>
+      <a href="proses.html">Transaksi</a>
+    </nav>
+  </header>
+
+  <main class="kontainer">
+    <section class="judul-bar">
+      <h1>Daftar Produk</h1>
+      <a href="form.html" class="tombol tombol-utama">+ Tambah Produk</a>
+    </section>
+
+    <label for="cari" class="label">Cari produk</label>
+    <input type="search" id="cari" class="input" placeholder="Ketik nama produk, mis. kopi">
+
+    <div class="kartu">
+      <table class="tabel">
+        <thead>
+          <tr><th>Nama</th><th>Kategori</th><th>Harga</th><th>Stok</th></tr>
+        </thead>
+        <tbody id="tabel-produk">
+          <tr><td>Kopi Sachet</td><td>Minuman</td><td>Rp2.500</td><td>40</td></tr>
+          <tr><td>Teh Celup</td><td>Minuman</td><td>Rp2.000</td><td class="stok-tipis">15</td></tr>
+          <tr><td>Gula 1kg</td><td>Sembako</td><td>Rp16.000</td><td class="stok-tipis">12</td></tr>
+          <tr><td>Beras 5kg</td><td>Sembako</td><td>Rp75.000</td><td class="stok-tipis">8</td></tr>
+          <tr><td>Sabun Mandi</td><td>Kebersihan</td><td>Rp4.000</td><td>25</td></tr>
+        </tbody>
+      </table>
+      <p id="info-cari" class="pesan"></p>
+    </div>
+  </main>
+
+  <footer class="footer">© 2026 KasirKu · Proyek Pelatihan Node.js &amp; React</footer>
+</body>
+</html>

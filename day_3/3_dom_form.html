@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 3 - 3. DOM & Form Interaktif</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; line-height: 1.6; background: #f9fafb; color: #1f2937; }
+    .card { background: white; padding: 24px; border-radius: 8px; border: 1px solid #e5e7eb; max-width: 650px; margin: 0 auto 20px; }
+    .form-group { margin-bottom: 12px; }
+    label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 0.9rem; }
+    input, select { width: 100%; padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; }
+    button { background: #f59e0b; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
+    button:hover { opacity: 0.9; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+    th, td { border: 1px solid #e5e7eb; padding: 8px 12px; text-align: left; }
+    th { background: #f3f4f6; }
+    .pesan { min-height: 24px; margin: 10px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hari 3 · Latihan 3: DOM Form Interaktif</h1>
+    <p style="color: #6b7280; margin-bottom: 16px;">
+      Mencegah reload dengan <code>e.preventDefault()</code>, validasi input, dan mencegah XSS dengan <code>textContent</code>.
+    </p>
+
+    <form id="form-produk" novalidate>
+      <div class="form-group">
+        <label for="nama">Nama Produk *</label>
+        <input type="text" id="nama" placeholder="mis. Teh Celup">
+      </div>
+
+      <div class="form-group">
+        <label for="kategori">Kategori</label>
+        <select id="kategori">
+          <option value="Minuman">Minuman</option>
+          <option value="Sembako">Sembako</option>
+          <option value="Kebersihan">Kebersihan</option>
+        </select>
+      </div>
+
+      <div style="display: flex; gap: 12px;">
+        <div class="form-group" style="flex: 1;">
+          <label for="harga">Harga (Rp) *</label>
+          <input type="number" id="harga" placeholder="mis. 2000" min="1">
+        </div>
+        <div class="form-group" style="flex: 1;">
+          <label for="stok">Stok *</label>
+          <input type="number" id="stok" placeholder="mis. 15" min="0">
+        </div>
+      </div>
+
+      <p id="pesan" class="pesan" role="status"></p>
+      <button type="submit">Simpan Produk</button>
+    </form>
+
+    <h3 style="margin-top: 24px;">Tabel Produk yang Baru Ditambahkan:</h3>
+    <table id="tabel">
+      <thead>
+        <tr><th>Nama</th><th>Kategori</th><th>Harga</th><th>Stok</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="3_dom_form.js"></script>
+</body>
+</html>
