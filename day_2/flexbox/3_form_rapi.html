@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pola 3: Form Rapi</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Pola 3 dari Slide */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wadah">
+    <h2 style="margin-bottom: 16px;">Pola 3: Form Rapi</h2>
+    <p style="color: var(--warna-redup); margin-bottom: 20px;">
+      Elemen form disusun tegak lurus (ke bawah) dengan rapi menggunakan <code>flex-direction: column</code> dan jarak seragam dengan <code>gap: 8px</code>.
+    </p>
+
+    <!-- Implementasi Pola -->
+    <div style="max-width: 400px;">
+      <form>
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" placeholder="Nama produk">
+
+        <label for="harga">Harga</label>
+        <input type="text" id="harga" placeholder="Harga produk">
+
+        <button type="submit">Simpan</button>
+      </form>
+    </div>
+
+    <div class="area-kode" style="margin-top: 24px; max-width: 500px;">/* CSS dari Slide */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}</div>
+
+    <a href="index.html" class="tautan-kembali">&larr; Kembali ke Daftar Pola</a>
+  </div>
+</body>
+</html>

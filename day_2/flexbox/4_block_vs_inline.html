@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi: Block vs Inline</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wadah">
+    <h2 style="margin-bottom: 16px;">Dasar Elemen: Block vs Inline</h2>
+    <p style="color: var(--warna-redup); margin-bottom: 20px;">
+      Sebelum menggunakan Flexbox, ketahui perbedaan sifat dasar antara elemen Block (mengambil lebar penuh baris) dan Inline (mengikuti alur teks di dalam baris).
+    </p>
+
+    <!-- HTML dari Slide -->
+    <div style="background: #ffffff; padding: 20px; border: 2px solid #1F2937; border-radius: 8px;">
+      <h3 style="margin-bottom: 12px;">Contoh Perilaku:</h3>
+      
+      <!-- Elemen Block -->
+      <div class="kotak-blok">&lt;div&gt;Blok 1&lt;/div&gt;</div>
+      <div class="kotak-blok">&lt;div&gt;Blok 2&lt;/div&gt;</div>
+
+      <!-- Elemen Inline di dalam Elemen Block -->
+      <div class="kotak-inline-contoh">
+        <p>Teks dengan <a href="#">link</a> dan <strong>tebal</strong> mengalir di dalam baris.</p>
+      </div>
+    </div>
+
+    <div class="area-kode" style="margin-top: 24px;">/* Catatan dari Slide */
+/* block : div, p, h1, section, form
+   inline: a, span, strong, img, label */
+
+/* HTML: */
+&lt;div&gt;Blok 1&lt;/div&gt;
+&lt;div&gt;Blok 2&lt;/div&gt;
+
+&lt;p&gt;Teks dengan &lt;a href="#"&gt;link&lt;/a&gt;
+   dan &lt;strong&gt;tebal&lt;/strong&gt; mengalir
+   di dalam baris.&lt;/p&gt;</div>
+
+    <a href="index.html" class="tautan-kembali">&larr; Kembali ke Daftar Pola</a>
+  </div>
+</body>
+</html>

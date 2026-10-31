@@ -1,0 +1,59 @@
+/* ===== CSS Dasar ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 16px;
+  background-color: #f9fafb;
+}
+
+.header {
+  background-color: #1f2937;
+  color: #f59e0b;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* ===== Kodingan Slide 2.1 ===== */
+
+/* default: layar HP */
+.daftar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kartu {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+.kartu-kuning {
+  background-color: #fbbf24;
+}
+
+/* layar >= 768px: tablet & laptop */
+@media (min-width: 768px) {
+  .daftar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .kartu {
+    width: calc(50% - 6px);
+  }
+}
+
+.keterangan {
+  margin-top: 20px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,176 @@
+/* ========================================================
+   MOCK-UP LAYAR FORM (KUK 1.4)
+   Label di setiap input, satu tombol utama, dan pesan error
+   ======================================================== */
+
+:root {
+  --warna-utama: #F59E0B;
+  --warna-teks: #1F2937;
+  --warna-redup: #6B7280;
+  --warna-latar: #F9FAFB;
+  --warna-kartu: #FFFFFF;
+  --warna-garis: #E5E7EB;
+  --warna-error: #DC2626;
+  --font-judul: "Poppins", system-ui, sans-serif;
+  --font-isi: "Inter", system-ui, sans-serif;
+  --jarak: 8px;
+  --sudut: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-isi);
+  background-color: var(--warna-latar);
+  color: var(--warna-teks);
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--warna-teks);
+  padding: 16px 24px;
+}
+
+header strong {
+  color: var(--warna-utama);
+  font-family: var(--font-judul);
+  font-size: 1.25rem;
+}
+
+header nav {
+  display: flex;
+  gap: 16px;
+}
+
+header a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-bottom: 2px;
+}
+
+header a.aktif {
+  border-bottom: 2px solid var(--warna-utama);
+}
+
+header a:hover {
+  color: var(--warna-utama);
+}
+
+/* Wadah */
+.wadah {
+  max-width: 560px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  font-family: var(--font-judul);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Form sesuai Slide 1.4 */
+form.form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--warna-kartu);
+  border: 1px solid var(--warna-garis);
+  border-radius: var(--sudut);
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+form.form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  color: var(--warna-teks);
+}
+
+form.form label:first-of-type {
+  margin-top: 0;
+}
+
+form.form input {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 10px 14px;
+  border: 1px solid var(--warna-garis);
+  border-radius: var(--sudut);
+  outline: none;
+  background-color: #FFFFFF;
+  transition: border-color 0.2s;
+}
+
+form.form input:focus {
+  border-color: var(--warna-utama);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+/* Status Validasi Error */
+form.form input.salah {
+  border-color: var(--warna-error);
+  background-color: #FEF2F2;
+}
+
+form.form input.salah:focus {
+  border-color: var(--warna-error);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+p.pesan-error {
+  color: var(--warna-error);
+  font-size: 0.85rem;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* Tombol Aksi */
+.aksi {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--warna-garis);
+}
+
+.aksi a {
+  color: var(--warna-redup);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.aksi a:hover {
+  color: var(--warna-teks);
+  text-decoration: underline;
+}
+
+.tombol-utama {
+  background-color: var(--warna-utama);
+  color: #FFFFFF;
+  padding: 10px 22px;
+  border-radius: var(--sudut);
+  border: 1px solid var(--warna-utama);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.tombol-utama:hover {
+  opacity: 0.9;
+}

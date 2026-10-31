@@ -1,0 +1,111 @@
+/* ===== Variabel dari docs/ui/DESIGN.md ===== */
+:root {
+  --warna-utama: #F59E0B;
+  --warna-teks: #1F2937;
+  --warna-redup: #6B7280;
+  --warna-latar: #F9FAFB;
+  --warna-kartu: #FFFFFF;
+  --warna-garis: #E5E7EB;
+  --warna-sukses: #16A34A;
+  --warna-error: #DC2626;
+  --font-judul: "Poppins", system-ui, sans-serif;
+  --font-isi: "Inter", system-ui, sans-serif;
+  --jarak: 8px;
+  --sudut: 8px;
+}
+
+/* ===== Dasar ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-isi);
+  font-size: 16px;
+  color: var(--warna-teks);
+  background: var(--warna-latar);
+  line-height: 1.5;
+}
+h1, h2 { font-family: var(--font-judul); font-weight: 600; margin-bottom: calc(var(--jarak) * 2); }
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.15rem; margin-top: calc(var(--jarak) * 3); }
+
+/* ===== Header & navigasi (Flexbox) ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--jarak);
+  padding: calc(var(--jarak) * 2);
+  background: var(--warna-teks);
+}
+.logo { color: var(--warna-utama); font-family: var(--font-judul); font-weight: 600; font-size: 1.25rem; text-decoration: none; }
+.nav { display: flex; gap: calc(var(--jarak) * 2); }
+.nav a { color: #FFFFFF; text-decoration: none; padding: 4px 0; }
+.nav a.aktif { border-bottom: 2px solid var(--warna-utama); }
+
+/* ===== Tata letak ===== */
+.kontainer { max-width: 960px; margin: 0 auto; padding: calc(var(--jarak) * 2); }
+.judul-bar { display: flex; flex-direction: column; gap: var(--jarak); margin-bottom: calc(var(--jarak) * 2); }
+.kartu {
+  background: var(--warna-kartu);
+  border: 1px solid var(--warna-garis);
+  border-radius: var(--sudut);
+  padding: calc(var(--jarak) * 2);
+  margin-top: calc(var(--jarak) * 2);
+  overflow-x: auto;
+}
+.footer { text-align: center; color: var(--warna-redup); font-size: 0.85rem; padding: calc(var(--jarak) * 3); }
+
+/* ===== Form ===== */
+.form { display: flex; flex-direction: column; gap: calc(var(--jarak) * 2); }
+.baris-form { display: flex; flex-direction: column; gap: 4px; }
+.dua-kolom { display: flex; flex-direction: column; gap: calc(var(--jarak) * 2); }
+.label { font-weight: 600; font-size: 0.9rem; }
+.input {
+  width: 100%;
+  padding: var(--jarak) calc(var(--jarak) * 1.5);
+  border: 1px solid var(--warna-garis);
+  border-radius: var(--sudut);
+  font: inherit;
+}
+.input:focus { outline: 2px solid var(--warna-utama); border-color: var(--warna-utama); }
+.input.salah { border-color: var(--warna-error); }
+
+/* ===== Tombol ===== */
+.tombol {
+  display: inline-block;
+  padding: var(--jarak) calc(var(--jarak) * 2);
+  border: 1px solid var(--warna-teks);
+  border-radius: var(--sudut);
+  background: var(--warna-kartu);
+  font: inherit; font-weight: 600;
+  text-decoration: none; text-align: center;
+  color: var(--warna-teks);
+  cursor: pointer;
+}
+.tombol-utama { background: var(--warna-utama); border-color: var(--warna-utama); }
+
+/* ===== Tabel ===== */
+.tabel { width: 100%; border-collapse: collapse; }
+.tabel th, .tabel td { text-align: left; padding: var(--jarak); border-bottom: 1px solid var(--warna-garis); }
+.tabel th { color: var(--warna-redup); font-size: 0.85rem; }
+.stok-tipis { color: var(--warna-error); font-weight: 600; }
+.tersembunyi { display: none; }
+
+/* ===== Pesan ===== */
+.pesan { min-height: 1.5em; font-weight: 600; }
+.pesan.sukses { color: var(--warna-sukses); }
+.pesan.error { color: var(--warna-error); }
+
+/* ===== Ringkasan transaksi ===== */
+.ringkasan { display: grid; grid-template-columns: 1fr auto; gap: 4px var(--jarak); margin: calc(var(--jarak) * 2) 0; }
+.ringkasan dd { text-align: right; }
+.ringkasan .total { font-weight: 700; font-size: 1.15rem; border-top: 1px solid var(--warna-garis); padding-top: var(--jarak); }
+
+/* ===== Layar lebar (mobile-first) ===== */
+@media (min-width: 768px) {
+  .judul-bar { flex-direction: row; justify-content: space-between; align-items: center; }
+  .dua-kolom { flex-direction: row; }
+  .dua-kolom .baris-form { flex: 1; }
+  .tata-transaksi { display: flex; gap: calc(var(--jarak) * 3); align-items: flex-start; }
+  .tata-transaksi > * { flex: 1; }
+}

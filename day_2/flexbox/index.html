@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiga Pola Flexbox yang Paling Sering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wadah">
+    <header class="header-materi">
+      <div class="judul-pil">Tiga Pola Flexbox yang Paling Sering</div>
+      <p class="subjudul">Cukup tiga pola ini untuk hampir semua layar aplikasi.</p>
+    </header>
+
+    <!-- GRID TIGA POLA FLEXBOX -->
+    <div class="grid-pola">
+      <!-- 1. NAVBAR -->
+      <section class="kolom-pola">
+        <h3>Navbar</h3>
+
+        <div class="area-preview">
+          <nav>
+            <a href="#" class="logo">KasirKu</a>
+            <div class="menu">
+              <a href="#">Produk</a>
+              <a href="#">Tambah</a>
+            </div>
+          </nav>
+        </div>
+
+        <div class="area-kode">nav {
+  display: flex;
+  justify-content: space-between;
+}</div>
+        <a href="1_navbar.html" style="font-size: 0.85rem; color: #4B5563;">&rarr; Buka file mandiri: <code>1_navbar.html</code></a>
+      </section>
+
+      <!-- 2. KARTU BERJAJAR (Highlight Kuning seperti di slide) -->
+      <section class="kolom-pola sorot">
+        <h3>Kartu berjajar</h3>
+
+        <div class="area-preview">
+          <div class="daftar">
+            <div class="kartu-item">Kartu 1</div>
+            <div class="kartu-item">Kartu 2</div>
+            <div class="kartu-item">Kartu 3</div>
+            <div class="kartu-item">Kartu 4</div>
+          </div>
+        </div>
+
+        <div class="area-kode">.daftar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}</div>
+        <a href="2_kartu_berjajar.html" style="font-size: 0.85rem; color: #1F2937; font-weight: 600;">&rarr; Buka file mandiri: <code>2_kartu_berjajar.html</code></a>
+      </section>
+
+      <!-- 3. FORM RAPI -->
+      <section class="kolom-pola">
+        <h3>Form rapi</h3>
+
+        <div class="area-preview">
+          <form>
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" placeholder="mis. Kopi Sachet">
+
+            <label for="harga">Harga</label>
+            <input type="text" id="harga" placeholder="mis. 2500">
+          </form>
+        </div>
+
+        <div class="area-kode">form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}</div>
+        <a href="3_form_rapi.html" style="font-size: 0.85rem; color: #4B5563;">&rarr; Buka file mandiri: <code>3_form_rapi.html</code></a>
+      </section>
+    </div>
+
+    <!-- ELEMEN BLOCK VS INLINE (Materi Pendukung dari Slide) -->
+    <section class="seksi-blok-inline">
+      <h2>Elemen Block vs Inline</h2>
+      <p style="color: var(--warna-redup); margin-bottom: 16px;">
+        Sebelum menggunakan Flexbox, pahami perilaku alami dari elemen block dan inline:
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div>
+          <h4 style="margin-bottom: 8px;">Contoh Tampilan:</h4>
+          <div class="kotak-blok">&lt;div&gt; Blok 1 &lt;/div&gt;</div>
+          <div class="kotak-blok">&lt;div&gt; Blok 2 &lt;/div&gt;</div>
+
+          <div class="kotak-inline-contoh">
+            <p>Teks dengan <a href="#">link</a> dan <strong>tebal</strong> mengalir di dalam baris.</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 8px;">Kode &amp; Klasifikasi:</h4>
+          <div class="area-kode">&lt;div&gt;Blok 1&lt;/div&gt;
+&lt;div&gt;Blok 2&lt;/div&gt;
+
+&lt;p&gt;Teks dengan &lt;a href="#"&gt;link&lt;/a&gt;
+   dan &lt;strong&gt;tebal&lt;/strong&gt; mengalir
+   di dalam baris.&lt;/p&gt;
+
+/* block : div, p, h1, section, form
+   inline: a, span, strong, img, label */</div>
+        </div>
+      </div>
+      <div style="margin-top: 14px;">
+        <a href="4_block_vs_inline.html" style="font-size: 0.85rem; color: #4B5563;">&rarr; Buka file mandiri: <code>4_block_vs_inline.html</code></a>
+      </div>
+    </section>
+
+    <div style="margin-top: 24px;">
+      <a href="../kerangka.html" class="tautan-kembali">&larr; Kembali ke kerangka.html (day_2)</a>
+    </div>
+  </div>
+</body>
+</html>

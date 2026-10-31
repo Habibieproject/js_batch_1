@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pola 2: Kartu Berjajar</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Pola 2 dari Slide (bisa menggunakan class .induk atau .daftar) */
+    .induk,
+    .daftar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wadah">
+    <h2 style="margin-bottom: 16px;">Pola 2: Kartu Berjajar</h2>
+    <p style="color: var(--warna-redup); margin-bottom: 20px;">
+      Kartu ditata menyamping dan otomatis turun ke baris berikutnya jika layar menyempit menggunakan <code>flex-wrap: wrap</code> serta jarak antar kartu dengan <code>gap: 16px</code>.
+    </p>
+
+    <!-- Implementasi Pola -->
+    <div class="daftar">
+      <div class="kartu-item">Kartu 1</div>
+      <div class="kartu-item">Kartu 2</div>
+      <div class="kartu-item">Kartu 3</div>
+      <div class="kartu-item">Kartu 4</div>
+    </div>
+
+    <div class="area-kode" style="margin-top: 24px;">/* CSS dari Slide (STYLE.CSS) */
+.induk {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Atau dengan nama .daftar */
+.daftar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}</div>
+
+    <a href="index.html" class="tautan-kembali">&larr; Kembali ke Daftar Pola</a>
+  </div>
+</body>
+</html>

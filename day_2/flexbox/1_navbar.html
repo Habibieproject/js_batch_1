@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pola 1: Navbar Flexbox</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Pola 1 dari Slide */
+    nav {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="wadah">
+    <h2 style="margin-bottom: 16px;">Pola 1: Navbar</h2>
+    <p style="color: var(--warna-redup); margin-bottom: 20px;">
+      Elemen kiri dan kanan otomatis terpisah ke ujung dengan <code>justify-content: space-between</code>.
+    </p>
+
+    <!-- Implementasi Pola -->
+    <nav>
+      <a href="#" class="logo">KasirKu</a>
+      <div class="menu">
+        <a href="#">Produk</a>
+        <a href="#">Tambah</a>
+      </div>
+    </nav>
+
+    <div class="area-kode" style="margin-top: 24px;">/* CSS dari Slide */
+nav {
+  display: flex;
+  justify-content: space-between;
+}</div>
+
+    <a href="index.html" class="tautan-kembali">&larr; Kembali ke Daftar Pola</a>
+  </div>
+</body>
+</html>

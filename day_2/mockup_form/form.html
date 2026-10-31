@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KasirKu - Form Tambah Produk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <strong>KasirKu</strong>
+    <nav>
+      <a href="../mockup_daftar/index.html">Produk</a>
+      <a href="form.html" class="aktif">Tambah</a>
+    </nav>
+  </header>
+
+  <main class="wadah">
+    <h1>Tambah Produk</h1>
+
+    <!-- Form Sesuai Slide 1.4 -->
+    <form class="form">
+      <label for="nama">Nama produk *</label>
+      <input id="nama" value="Kopi Sachet">
+
+      <label for="harga">Harga (Rp) *</label>
+      <input id="harga" class="salah" value="abc">
+      <p class="pesan-error">Harga harus angka</p>
+
+      <div class="aksi">
+        <a href="../mockup_daftar/index.html">Batal</a>
+        <button type="submit" class="tombol-utama">Simpan</button>
+      </div>
+    </form>
+  </main>
+
+</body>
+</html>
