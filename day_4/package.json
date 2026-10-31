@@ -1,0 +1,14 @@
+{
+  "name": "kasirku",
+  "version": "1.0.0",
+  "description": "Aplikasi kasir & stok untuk warung — proyek pelatihan Node.js & React",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "bug": "node src/bug-hunt.js"
+  },
+  "author": "Andrea Surya Habibie",
+  "license": "MIT"
+}
