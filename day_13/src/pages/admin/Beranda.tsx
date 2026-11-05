@@ -24,6 +24,10 @@ export default function Beranda({ daftarPengguna }: Props) {
           <span>Pengguna</span>
           <strong>{daftarPengguna.length}</strong>
         </div>
+        <div className="kartu-ringkas">
+          <span>Belum Bayar</span>
+          <strong>{daftarPengguna.length}</strong>
+        </div>
       </div>
     </section>
   );
