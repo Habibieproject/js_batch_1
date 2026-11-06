@@ -1,0 +1,246 @@
+/* ===== Kerangka ===== */
+.admin {
+  display: flex;
+  min-height: 100vh;
+}
+.admin-utama {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.admin-konten {
+  padding: 24px;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 220px;
+  background: #232323;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+}
+
+.sidebar-brand {
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffc61a;
+  padding: 4px 12px 20px;
+}
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.sidebar-link,
+.sidebar-keluar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #d9d9d9;
+  text-decoration: none;
+  font: inherit;
+}
+.sidebar-link:hover {
+  background: #3a3a3a;
+}
+.sidebar-link.active {
+  background: #ffc61a;
+  color: #232323;
+  font-weight: 600;
+}
+.sidebar-keluar {
+  background: none;
+  border: 1px solid #595959;
+  cursor: pointer;
+}
+.sidebar-keluar:hover {
+  background: #c62828;
+  border-color: #c62828;
+  color: #fff;
+}
+
+/* ===== Header ===== */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: #fff;
+  border-bottom: 1px solid #d9d9d9;
+}
+.header-menu {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 4px;
+}
+.header-judul {
+  font-weight: 600;
+}
+.header-pengguna {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.badge {
+  background: #ffc61a;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* ===== Isi Halaman ===== */
+.ringkasan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+.kartu-ringkas {
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.kartu-ringkas strong {
+  font-size: 32px;
+}
+.tabel {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.tabel th,
+.tabel td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.tabel th {
+  background: #fafafa;
+  font-size: 13px;
+  color: #595959;
+}
+.status {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.status.aman {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+.status.menipis {
+  background: #fff4cc;
+  color: #7a5c00;
+}
+.status.habis {
+  background: #fdecea;
+  color: #c62828;
+}
+.pengaturan {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 8px 16px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+}
+.pengaturan dt {
+  color: #595959;
+}
+.pengaturan dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ===== Layar HP (Mobile Menu) ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 20;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease-out;
+  }
+  .sidebar.terbuka {
+    transform: translateX(0);
+  }
+  .sidebar-latar {
+    position: fixed;
+    inset: 0;
+    background: rgb(0 0 0 / 0.4);
+    z-index: 10;
+  }
+  .header-menu {
+    display: block;
+  }
+  .admin-konten {
+    padding: 16px;
+    overflow-x: auto;
+  }
+}
+
+/* ===== Form & Aksi Produk (Hari 17) ===== */
+.form-produk {
+  display: block;
+  max-width: none;
+  margin: 0 0 16px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+}
+.form-produk h2 {
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+.form-produk-isi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.form-produk-isi input {
+  flex: 1 1 140px;
+}
+.form-produk button,
+.aksi button {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 6px;
+  background: #ffc61a;
+  font-weight: 600;
+  cursor: pointer;
+}
+.form-produk .btn-batal {
+  background: #eee;
+}
+.aksi {
+  display: flex;
+  gap: 6px;
+}
+.aksi .btn-hapus {
+  background: #fdecea;
+  color: #c62828;
+}
+.tabel-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+.tabel-wrap .tabel {
+  min-width: 560px;
+}
